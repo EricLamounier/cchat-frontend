@@ -56,11 +56,17 @@ const logIn = () => {
     // WebSocket
     websocket = new WebSocket('wss://cchat-backend-i2rk.onrender.com')
     websocket.onmessage = processMessage
+    websocket.onopen = () => websocket.send(JSON.stringify({'id': -1, 'message': `${myUser.userName} acabou de entrar no chat!`}))
 }
 
 const processMessage = ({data}) => {
 
     const _data = JSON.parse(data)
+
+    // Usuário {} no char
+    if (_data.id == -1){
+        console.log(_data.message)
+    }
 
     if (_data.id == myUser.userID)
         sendMessage(_data)
