@@ -106,6 +106,8 @@ const sendMessage = (content) => {
 
     div.appendChild(messageBox)
 
+    input.value=''
+
     chat.appendChild(div)
 }
 
