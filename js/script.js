@@ -54,7 +54,7 @@ const logIn = () => {
 
     
     // WebSocket
-    websocket = new WebSocket('ws://0.tcp.sa.ngrok.io:13353')
+    websocket = new WebSocket('wss://cchat-backend-i2rk.onrender.com')
     websocket.onmessage = processMessage
 }
 
