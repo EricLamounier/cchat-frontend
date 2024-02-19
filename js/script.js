@@ -54,7 +54,7 @@ const logIn = () => {
 
     
     // WebSocket
-    websocket = new WebSocket('https://8b22-179-189-86-218.ngrok-free.app:8080')
+    websocket = new WebSocket('wss://0.tcp.sa.ngrok.io:10054')
     websocket.onmessage = processMessage
 }
 
