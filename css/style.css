@@ -132,7 +132,6 @@ body {
     flex-direction: column;
     gap: 30px;
     height: calc(100% - var(--sizeHeight2));
-    max-height: 480px;
     border-radius: 20px;
 }
 
