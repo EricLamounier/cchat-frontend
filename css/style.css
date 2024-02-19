@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --size1: 100px;
+    --sizeHeight2: 80px;
+    --gap1: 50px;
+    --borderBox: 15px;
+    --background: #756198;
+    --shaddow1: #635281;
+    --shaddow2: #8770af;
+    --fontColor: rgb(232, 231, 234);
+    --fontColor2: rgb(196, 196, 196);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+    font-family: sans-serif;
+    color: var(--fontColor);
+}
+
+#main {
+    width: 80%;
+    max-width: 1000px;
+    height: 100vh;
+    max-height: 800px;
+    padding: 50px;
+    display: flex;
+    gap: 50px;
+}
+
+.chatHeader {
+    width: 100%;
+    height: var(--sizeHeight2);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    background: var(--background);
+    box-shadow:  7px 7px 14px var(--shaddow1),
+                 -7px -7px 14px var(--shaddow2);
+    padding-right: 10px;
+}
+
+.chatHeader .userImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: var(--background);
+    box-shadow:  7px 7px 14px var(--shaddow1),
+                 -7px -7px 14px var(--shaddow2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatHeader .userInfo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.userInfo span {
+    font-size: 14px;
+    text-align: end;
+}
+
+.side {
+    width: 260px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap1);
+}
+
+.sideBarMenu {
+    width: 100%;
+    height:  var(--sizeHeight2);
+    border-radius: var(--borderBox);
+    border-radius: 10px;
+    border-radius: 10px;
+    background: var(--background);
+    box-shadow:  7px 7px 14px var(--shaddow1),
+    -7px -7px 14px var(--shaddow2);
+}
+
+.sideBarContainer {
+    width: 100%;
+    height: calc(100% - var(--sizeHeight2));
+    border-radius: var(--borderBox);
+    border-radius: 10px;
+    background: var(--background);
+    box-shadow:  7px 7px 14px var(--shaddow1),
+                 -7px -7px 14px var(--shaddow2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sideBarContainer .person {
+    width: 100px;
+    min-height: 90px;
+    border-radius: 10px;
+    background: var(--background);
+    box-shadow:  7px 7px 14px var(--shaddow1),
+                 -7px -7px 14px var(--shaddow2);
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap1);
+    width: 100%;
+}
+
+.chatBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: calc(100% - var(--sizeHeight2));
+    max-height: 480px;
+    border-radius: 20px;
+}
+
+.inputBox {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    height: calc(var(--sizeHeight2) - 20px);
+    position: relative;
+    font-size: 12px;
+}
+
+.inputBox > input[type=text] {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 15;
+    padding-left: 10px;
+    border-radius: 10px;
+    background: var(--background);
+    box-shadow:  7px 7px 14px var(--shaddow1),
+                 -7px -7px 14px var(--shaddow2);
+    border: 0;
+    outline: 0;
+    color: var(--fontColor);
+}
+
+.inputBox > input::placeholder {
+    font-size: 14px;
+    color: var(--fontColor);
+    opacity: 0.4;
+}
+
+.inputBox > input:focus {
+    background: linear-gradient(145deg, #614f7f, #745e97);
+    box-shadow:  8px 8px 16px #5c4b78,
+                 -8px -8px 16px #7c65a2;
+}
+
+.inputBox > #button {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s ease-in-out;
+}
+
+.inputBox > #button:active {
+    background: linear-gradient(145deg, #614f7f, #745e97);
+    box-shadow:  8px 8px 16px #5c4b78,
+                 -8px -8px 16px #7c65a2;
+    transform: translate(1px,1px);
+}
+
+.inputBox::after {
+    content: 'Caracteres: ';
+    position: absolute;
+    bottom: -20px;
+    left: 5px;
+}
+
+.inputBox::before {
+    content: attr(count);
+    position: absolute;
+    bottom: -20px;
+    left: 75px;
+    font-weight: bold;
+}
+
+.inputBox > .sendBox {
+    width: 80px;
+    border-radius: 10px;
+    background: var(--background);
+    box-shadow:  7px 7px 14px var(--shaddow1),
+                 -7px -7px 14px var(--shaddow2);
+    border: 0;
+}
