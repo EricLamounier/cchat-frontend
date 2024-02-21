@@ -54,7 +54,7 @@ const logIn = () => {
 
     
     // WebSocket
-    websocket = new WebSocket('wss://cchat-backend-i2rk.onrender.com')
+    websocket = new WebSocket('wss://partially-legible-ferret.ngrok-free.app')
     websocket.onmessage = processMessage
     websocket.onopen = () => websocket.send(JSON.stringify({'id': -1, 'message': `${myUser.userName} acabou de entrar no chat!`}))
 }
